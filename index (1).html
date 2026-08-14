@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KPOPALYSE NOW — The Ministry of K-pop Nationalism</title>
+<meta name="description" content="The official state media of @yoo__shastan. One nation, under bass drops. ILLIT the queens.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700;900&family=Outfit:wght@400;500;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --pink:#FF2E9A;
+    --lilac:#B9A6FF;
+    --cream:#FFF4E6;
+    --ink:#241536;
+    --gold:#FFC531;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--cream);
+    color:var(--ink);
+    font-family:'Outfit',sans-serif;
+    font-size:17px;
+    line-height:1.6;
+    overflow-x:hidden;
+  }
+  ::selection{background:var(--pink);color:var(--cream)}
+
+  .stamp-font{font-family:'IBM Plex Mono',monospace}
+  h1,h2,h3{font-family:'Unbounded',sans-serif;line-height:1.05}
+
+  /* ---------- HERO ---------- */
+  .hero{
+    min-height:92vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:4rem 1.25rem 5rem;
+    position:relative;
+    background:
+      radial-gradient(circle at 15% 20%, rgba(185,166,255,.45), transparent 45%),
+      radial-gradient(circle at 85% 75%, rgba(255,46,154,.28), transparent 50%),
+      var(--cream);
+  }
+  .eyebrow{
+    font-family:'IBM Plex Mono',monospace;
+    font-weight:600;
+    font-size:.78rem;
+    letter-spacing:.22em;
+    text-transform:uppercase;
+    border:2px solid var(--ink);
+    padding:.45rem .9rem;
+    border-radius:999px;
+    background:var(--gold);
+    box-shadow:4px 4px 0 var(--ink);
+    margin-bottom:1.75rem;
+  }
+  .hero h1{
+    font-weight:900;
+    font-size:clamp(2.6rem, 9vw, 6.5rem);
+    text-transform:uppercase;
+    letter-spacing:-.01em;
+  }
+  .hero h1 .now{
+    display:block;
+    color:var(--pink);
+    -webkit-text-stroke:0;
+    text-shadow:5px 5px 0 var(--lilac);
+  }
+  .hero p.sub{
+    max-width:34rem;
+    margin:1.75rem auto 0;
+    font-size:1.15rem;
+    font-weight:500;
+  }
+  .hero p.sub a{color:var(--pink);font-weight:700;text-decoration:none;border-bottom:3px solid var(--gold)}
+  .cta-row{margin-top:2.25rem;display:flex;gap:1rem;flex-wrap:wrap;justify-content:center}
+  .btn{
+    font-family:'Unbounded',sans-serif;
+    font-weight:700;
+    font-size:.85rem;
+    text-transform:uppercase;
+    letter-spacing:.05em;
+    text-decoration:none;
+    color:var(--ink);
+    background:var(--pink);
+    border:3px solid var(--ink);
+    border-radius:14px;
+    padding:.9rem 1.6rem;
+    box-shadow:5px 5px 0 var(--ink);
+    transition:transform .12s ease, box-shadow .12s ease;
+    display:inline-block;
+  }
+  .btn:hover{transform:translate(2px,2px);box-shadow:3px 3px 0 var(--ink)}
+  .btn.alt{background:var(--lilac)}
+  .btn:focus-visible{outline:3px dashed var(--pink);outline-offset:4px}
+
+  /* rotating official seal */
+  .seal{
+    position:absolute;
+    top:1.5rem;
+    right:1.5rem;
+    width:130px;height:130px;
+    animation:spin 24s linear infinite;
+  }
+  .seal text{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:9.2px;
+    font-weight:600;
+    letter-spacing:2px;
+    fill:var(--ink);
+  }
+  @keyframes spin{to{transform:rotate(360deg)}}
+  @media (prefers-reduced-motion: reduce){
+    .seal{animation:none}
+    .ticker-track{animation:none !important}
+    html{scroll-behavior:auto}
+  }
+
+  /* ---------- TICKER ---------- */
+  .ticker{
+    background:var(--ink);
+    color:var(--cream);
+    overflow:hidden;
+    border-top:3px solid var(--ink);
+    border-bottom:3px solid var(--ink);
+    transform:rotate(-1.2deg) scale(1.02);
+  }
+  .ticker-track{
+    display:flex;
+    gap:3rem;
+    white-space:nowrap;
+    padding:.8rem 0;
+    font-family:'IBM Plex Mono',monospace;
+    font-weight:600;
+    font-size:.85rem;
+    letter-spacing:.15em;
+    text-transform:uppercase;
+    animation:scroll 30s linear infinite;
+    width:max-content;
+  }
+  .ticker-track span::before{content:"★";color:var(--gold);margin-right:3rem}
+  @keyframes scroll{to{transform:translateX(-50%)}}
+
+  /* ---------- SECTIONS ---------- */
+  section{padding:5.5rem 1.25rem}
+  .wrap{max-width:64rem;margin:0 auto}
+  .sec-label{
+    font-family:'IBM Plex Mono',monospace;
+    font-weight:600;
+    font-size:.75rem;
+    letter-spacing:.25em;
+    text-transform:uppercase;
+    color:var(--pink);
+    margin-bottom:.75rem;
+  }
+  h2{font-size:clamp(1.8rem,4.5vw,3rem);font-weight:900;text-transform:uppercase;margin-bottom:2.5rem}
+
+  /* doctrine */
+  .doctrine{background:var(--lilac)}
+  .tenets{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.5rem}
+  .tenet{
+    background:var(--cream);
+    border:3px solid var(--ink);
+    border-radius:18px;
+    padding:1.75rem 1.5rem;
+    box-shadow:6px 6px 0 var(--ink);
+  }
+  .tenet .art{font-size:2.2rem;margin-bottom:.75rem;display:block}
+  .tenet h3{font-size:1.05rem;margin-bottom:.6rem;text-transform:uppercase}
+  .tenet p{font-size:.95rem}
+
+  /* believer */
+  .believer .card{
+    display:grid;
+    grid-template-columns:1fr 1.2fr;
+    gap:0;
+    border:3px solid var(--ink);
+    border-radius:22px;
+    overflow:hidden;
+    box-shadow:8px 8px 0 var(--ink);
+    background:var(--cream);
+  }
+  .believer .portrait{
+    background:repeating-linear-gradient(45deg,var(--pink),var(--pink) 18px,var(--gold) 18px,var(--gold) 36px);
+    display:flex;align-items:center;justify-content:center;
+    min-height:260px;
+    font-size:5rem;
+  }
+  .believer .bio{padding:2rem}
+  .believer .bio h3{font-size:1.4rem;margin-bottom:.25rem}
+  .handle{font-family:'IBM Plex Mono',monospace;font-weight:600;color:var(--pink);margin-bottom:1rem;display:block}
+  .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:.75rem;margin-top:1.5rem}
+  .stat{border:2px solid var(--ink);border-radius:12px;padding:.7rem .5rem;text-align:center;background:var(--lilac)}
+  .stat b{font-family:'Unbounded',sans-serif;font-size:1.05rem;display:block}
+  .stat small{font-family:'IBM Plex Mono',monospace;font-size:.62rem;letter-spacing:.08em;text-transform:uppercase}
+
+  /* queens */
+  .queens{background:var(--ink);color:var(--cream)}
+  .queens .sec-label{color:var(--gold)}
+  .queen-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1.25rem}
+  .queen{
+    background:var(--cream);
+    color:var(--ink);
+    border-radius:16px;
+    border:3px solid var(--pink);
+    padding:1.5rem 1.25rem;
+    text-align:center;
+    transition:transform .15s ease;
+  }
+  .queen:hover{transform:translateY(-6px) rotate(-1.5deg)}
+  .queen .crown{font-size:2rem}
+  .queen h3{font-size:1.1rem;margin:.5rem 0 .25rem;text-transform:uppercase}
+  .queen p{font-size:.85rem}
+  .queens .decree{
+    margin-top:2.5rem;
+    border:2px dashed var(--gold);
+    border-radius:14px;
+    padding:1.25rem 1.5rem;
+    font-family:'IBM Plex Mono',monospace;
+    font-size:.85rem;
+    color:var(--gold);
+  }
+
+  /* join */
+  .join{text-align:center}
+  .join p{max-width:36rem;margin:0 auto 2rem}
+
+  footer{
+    background:var(--ink);
+    color:var(--cream);
+    text-align:center;
+    padding:2.5rem 1.25rem;
+    font-family:'IBM Plex Mono',monospace;
+    font-size:.75rem;
+    letter-spacing:.1em;
+  }
+  footer .gold{color:var(--gold)}
+
+  @media (max-width:640px){
+    .believer .card{grid-template-columns:1fr}
+    .seal{width:90px;height:90px;top:1rem;right:1rem}
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <svg class="seal" viewBox="0 0 130 130" aria-hidden="true">
+    <defs>
+      <path id="circ" d="M65,65 m-50,0 a50,50 0 1,1 100,0 a50,50 0 1,1 -100,0"/>
+    </defs>
+    <circle cx="65" cy="65" r="62" fill="none" stroke="var(--ink)" stroke-width="3"/>
+    <circle cx="65" cy="65" r="40" fill="none" stroke="var(--pink)" stroke-width="2" stroke-dasharray="4 4"/>
+    <text><textPath href="#circ">MINISTRY OF K-POP NATIONALISM ★ EST. FOREVER ★</textPath></text>
+    <text x="65" y="72" text-anchor="middle" style="font-size:22px">👑</text>
+  </svg>
+
+  <span class="eyebrow">Official State Media · Dept. of Vibes</span>
+  <h1>Kpopalyse <span class="now">Now</span></h1>
+  <p class="sub">One nation, under bass drops, indivisible, with choreography and justice for all. Brought to you by supreme believer <a href="https://www.instagram.com/yoo__shastan" rel="noopener">@yoo__shastan</a>.</p>
+  <div class="cta-row">
+    <a class="btn" href="#queens">Meet the Queens</a>
+    <a class="btn alt" href="#doctrine">Read the Doctrine</a>
+  </div>
+</header>
+
+<div class="ticker" aria-hidden="true">
+  <div class="ticker-track">
+    <span>ILLIT the queens</span>
+    <span>Streaming is a civic duty</span>
+    <span>The comeback is always coming</span>
+    <span>Bias wrecking is constitutionally protected</span>
+    <span>Glory to the fanchant</span>
+    <span>ILLIT the queens</span>
+    <span>Streaming is a civic duty</span>
+    <span>The comeback is always coming</span>
+    <span>Bias wrecking is constitutionally protected</span>
+    <span>Glory to the fanchant</span>
+  </div>
+</div>
+
+<section class="doctrine" id="doctrine">
+  <div class="wrap">
+    <div class="sec-label">Article I — Founding Principles</div>
+    <h2>The Doctrine of K-pop Nationalism</h2>
+    <div class="tenets">
+      <div class="tenet">
+        <span class="art">📢</span>
+        <h3>Streaming Is Citizenship</h3>
+        <p>Every citizen shall stream the title track daily. Skipping the intro is a misdemeanor. Skipping the bridge is treason.</p>
+      </div>
+      <div class="tenet">
+        <span class="art">🗳️</span>
+        <h3>Vote Early, Vote Often</h3>
+        <p>Music show voting apps are the truest form of democracy known to humankind. The Founders simply lacked the technology.</p>
+      </div>
+      <div class="tenet">
+        <span class="art">🧠</span>
+        <h3>The Choreo Is Law</h3>
+        <p>All citizens must be able to perform at least the chorus point dance at weddings, graduations, and moments of national significance.</p>
+      </div>
+      <div class="tenet">
+        <span class="art">🕊️</span>
+        <h3>Peace Through Playlists</h3>
+        <p>Diplomatic disputes shall be settled by aux cord. No war has ever survived a perfectly timed key change.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="believer" id="believer">
+  <div class="wrap">
+    <div class="sec-label">Article II — The Supreme Believer</div>
+    <h2>Yoo__shastan</h2>
+    <div class="card">
+      <div class="portrait" aria-hidden="true">🫡</div>
+      <div class="bio">
+        <h3>Believer-In-Chief</h3>
+        <span class="handle">@yoo__shastan</span>
+        <p>A true patriot of the movement. Where others hear "just a song," yoo__shastan hears the founding anthem of a better tomorrow. Duties include mandatory playlist enforcement, comeback countdown administration, and explaining to confused relatives why this matters, actually.</p>
+        <div class="stats">
+          <div class="stat"><b>∞</b><small>Streams Logged</small></div>
+          <div class="stat"><b>100%</b><small>Belief Level</small></div>
+          <div class="stat"><b>5/5</b><small>Queens Recognized</small></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="queens" id="queens">
+  <div class="wrap">
+    <div class="sec-label">Article III — The Royal Court</div>
+    <h2>ILLIT: The Queens 👑</h2>
+    <div class="queen-grid">
+      <div class="queen"><div class="crown">👑</div><h3>Yunah</h3><p>Her Majesty of Main Vocals. Approval rating: unconstitutional to measure, assumed perfect.</p></div>
+      <div class="queen"><div class="crown">👑</div><h3>Minju</h3><p>Duchess of Visuals. Legally responsible for at least three national holidays.</p></div>
+      <div class="queen"><div class="crown">👑</div><h3>Moka</h3><p>Sovereign of the Dance Break. The ministry recommends hydrating before viewing.</p></div>
+      <div class="queen"><div class="crown">👑</div><h3>Wonhee</h3><p>Chancellor of Charm. Weaponized cuteness registered under international treaty.</p></div>
+      <div class="queen"><div class="crown">👑</div><h3>Iroha</h3><p>Minister of the Maknae Line. Youngest member, oldest soul, highest jurisdiction.</p></div>
+    </div>
+    <div class="decree">
+      ⬢ OFFICIAL DECREE №1: By order of the Ministry, ILLIT are hereby recognized as The Queens in perpetuity. This ruling is final, binding, and extremely correct. Signed — Believer-In-Chief yoo__shastan.
+    </div>
+  </div>
+</section>
+
+<section class="join" id="join">
+  <div class="wrap">
+    <div class="sec-label">Article IV — Enlistment</div>
+    <h2>Join the Movement</h2>
+    <p>Membership is free. The only requirements are a functioning play button, a willingness to learn fanchants, and unconditional recognition of the Queens. Benefits include joy, superior playlists, and the moral high ground.</p>
+    <a class="btn" href="https://www.instagram.com/yoo__shastan" rel="noopener">Report for Duty 🫡</a>
+  </div>
+</section>
+
+<footer>
+  <p><span class="gold">★</span> KPOPALYSE NOW · A production of the Ministry of K-pop Nationalism <span class="gold">★</span></p>
+  <p style="margin-top:.5rem;opacity:.7">Not affiliated with ILLIT, HYBE, or any actual government. Satire, but the Queens part is real.</p>
+</footer>
+
+</body>
+</html>
